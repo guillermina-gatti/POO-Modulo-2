@@ -1,5 +1,5 @@
 public class Libro {
-    private int codigo;
+    private final int CODIGO; //CONSTANTES
     private String titulo;
     private String autor;
     private int stock;
@@ -8,14 +8,30 @@ public class Libro {
     private char sector;
 
     //constructor
-    public Libro (int codigo, String titulo, String autor, int stock, double costo, char sector) {
-        this.codigo=codigo;
+    public Libro (int CODIGO, String titulo, String autor, int stock, double costo, char sector) {
+        this.CODIGO=CODIGO; //El codigo es una constate ahora
         this.titulo=titulo;
         this.autor=autor;
         this.stock=stock;
         this.costo=costo;
         this.precioVenta=costo*1.25;
         this.sector=sector;
+    }
+
+    //consultar
+    public int getCODIGO() {
+        return CODIGO;
+    }
+
+    //no se puede modificar
+//    public void setCODIGO(int codigoNuevo ){
+//        this.CODIGO = codigoNuevo;
+//    }
+
+    //ver solo los ultimos 3 digitos del codigo
+    public String getCodigoBreve(){
+        String codigoTexto= String.valueOf(this.CODIGO) ;
+        return codigoTexto.substring(codigoTexto.length()-3);
     }
 
     //Get=mostrar y set=actualizar
@@ -55,7 +71,4 @@ public class Libro {
         return this.autor=autor;
     }
 
-    public int getCodigo(){
-        return this.codigo=codigo;
-    }
 }
