@@ -1,12 +1,15 @@
 public class Libro {
     private final int CODIGO; //CONSTANTES (puede ser double, int, long)
-    private final int LIMITE_STOCK_PROMO=30;
+    private final int LIMITE_STOCK_PROMO = 30;
     private String titulo;
     private String autor;
     private int stock;
     private double costo;
     private double precioVenta;
     private char sector;
+
+    //Un metodo de clase solo puede utilizar los atributos ESTATICOS.
+    private static int limiteStockMinimo = 5;
 
     //constructor
     public Libro(int CODIGO, String titulo, String autor, int stock, double costo, char sector) {
@@ -18,6 +21,14 @@ public class Libro {
         this.precioVenta = costo * 1.25;
         this.sector = sector;
         aplicanPromosAlPrecioVenta();
+    }
+
+    public static int getLimiteStockMinimo() {
+        return limiteStockMinimo;
+    }
+
+    public static void setLimiteStockMinimo(int nuevoLimiteSaldoNegativo) {
+        limiteStockMinimo = nuevoLimiteSaldoNegativo;
     }
 
     //consultar
@@ -40,7 +51,6 @@ public class Libro {
         this.sector = sector;
         this.aplicanPromosAlPrecioVenta();
     }
-
 
     //CODIGO DE AGUS
 //    public void aplicanPromosAlPrecioVenta(){
@@ -73,7 +83,7 @@ public class Libro {
         this.setPrecioVenta(nuevoPrecio);
     }
 
-    public double getDescuento(){
+    public double getDescuento() {
         double precioSinDescuento = this.costo * 1.25;
         double descuento = precioSinDescuento - this.precioVenta;
         return descuento;
@@ -135,5 +145,4 @@ public class Libro {
                 ", sector='" + sector + '\'' +
                 '}';
     }
-
 }

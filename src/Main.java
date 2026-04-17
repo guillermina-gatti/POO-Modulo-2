@@ -44,13 +44,26 @@ public class Main {
         // un nuevo libro e incluirlo en un arreglo de Libros. Visualizar la información del Array luego.>
 
         //Definimos un arreglo para almacenar LIBROS
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("Ingrese la cantidad de libros a almacenar: ");
+//        int n = sc.nextInt();
+//
+//        Libro[] biblioteca = new Libro[n];
+//        registrarLibrosEnLista(biblioteca);
 
-        System.out.println("Ingrese la cantidad de libros a almacenar: ");
-        int n = sc.nextInt();
+       // < Vamos a sumar los conceptos vistos a la clase Libro (en el diagrama y en el código):
+        // ❏ Ahora nos indican que se estableció un stock mínimo recomendado de 5 unidades para todos los libros
+        // que debe actualizarse a nivel general.
 
-        Libro[] biblioteca = new Libro[n];
-        registrarLibrosEnLista(biblioteca);
+        // ❏ En la clase principal: ❏ consultar desde uno de los titulos cual es el stock mínimo recomendado.
+        // y ❏ Actualizar el stock mínimo a 4.>
+        System.out.println("El stock minimo recomendado actual es: " + Libro.getLimiteStockMinimo());
+        Libro.setLimiteStockMinimo(4);
+
+        System.out.println("Stock minimo actualizado a: " + Libro.getLimiteStockMinimo());
+
+        System.out.println("Consulta desde libro 2: " + libro2.getLimiteStockMinimo());
     }
     public static void registrarLibrosEnLista(Libro[] lista) {
         Scanner scanner = new Scanner(System.in);
