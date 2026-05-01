@@ -9,7 +9,7 @@ public class Tratamiento {
         this.descripcion = descripcion;
     }
 
-     String getTitulo() {
+     public String getTitulo() {
         return titulo;
     }
 

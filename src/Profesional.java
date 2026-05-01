@@ -17,4 +17,12 @@ public class Profesional {
 //    public String registrarPaciente( String paciente){
 //
 //    }
+    @Override
+    public String toString() {
+        return "Profesional{" +
+                "nombre='" + nombre + '\n' +
+                ", apellido='" + apellido + '\n' +
+                ", matricula='" + matricula + '\n' +
+                '}';
+    }
 }

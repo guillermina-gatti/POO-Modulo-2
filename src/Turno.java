@@ -24,11 +24,12 @@ public class Turno {
         return numeroDeTurno;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Turno{ tratamiento=" + tratamiento +
-//                ", profesional=" + profesional +
-//                ", paciente=" + paciente +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Turno{ " +
+                tratamiento + //recursion infinita
+                 profesional +
+//                ", paciente=" + paciente + //Lo comento para no generar un bucle o que sea un llamado recursivo
+                '}';
+    }
 }

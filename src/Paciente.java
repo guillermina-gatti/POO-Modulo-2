@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// Clase = molde
 public class Paciente {
     private String nombre;
     private String apellido;
@@ -32,7 +32,7 @@ public class Paciente {
     public void buscarUnTurnoPorTratamiento(String tratamiento){
         this.historialTurno.forEach(turno -> {
             if (turno.getTratamiento().getTitulo().equals(tratamiento)){
-                System.out.println("El turno para el tratamiento es: "+ turno.getTratamiento());
+                System.out.println("El turno para el tratamiento es: "+ turno); // Esta invocando turno.toString()
             }
         });
 
@@ -41,7 +41,7 @@ public class Paciente {
     }
 
     public void agregarTurno(Turno turno){
-        if (turno != null && !historialTurno.contains(turno) && historialTurno.size()<= 3 ){
+        if (turno != null && !historialTurno.contains(turno) && historialTurno.size()< 3 ){
             this.historialTurno.addFirst(turno);
         } else {
             System.out.println("No se pudo registrar el turno");
@@ -76,9 +76,9 @@ public class Paciente {
     @Override
     public String toString() {
         return "Paciente{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", mail='" + mail + '\'' +
+                "nombre='" + nombre + '\n' +
+                ", apellido='" + apellido + '\n' +
+                ", mail='" + mail + '\n' +
                 ", telefono=" + telefono +
                 ", historialTurno=" + historialTurno +
                 ", profesionalesAsociados=" + profesionalesAsociados +
